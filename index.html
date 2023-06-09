@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://kit.fontawesome.com/670193471c.js" crossorigin="anonymous"></script>
+    <title>Tim Maia</title>
+    <style>
+        .navbar-nav .nav-link.active {
+            color: white;
+        }
+
+        .nav-link {
+            text-align: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            background-color: rgba(36, 36, 36, 0.774);
+            z-index: 1;
+        }
+
+        .carousel-item img {
+            height: 700px;
+            object-fit: cover;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .card-body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .card-title {
+            position: relative;
+            margin-top: auto;
+        } 
+
+        #biografia p {
+            max-width: 700px;
+            
+        }
+
+        #biografia {
+            margin: 20px 20px;
+        }
+
+        /*Estilização dos controles do music-player*/
+        .music-player {
+            background-color: #ffe0e5;
+            width: 100%;
+            padding: 25px 35px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        #progress1,
+        #progress2,
+        #progress3 {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background-color: #f53192;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 40px 0;
+        }
+
+        #progress1::-webkit-slider-thumb,
+        #progress2::-webkit-slider-thumb,
+        #progress3::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            background-color: #f53192;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 8px solid #fff;
+            box-shadow: 0 5px 5px rgba(255, 26, 26, 0.22);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .controls div {
+            width: 54px;
+            height: 54px;
+            margin: 18px;
+            background-color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #f53192;
+            box-shadow: 0 10px 20px rgba(255, 26, 26, 0.22);
+            cursor: pointer;
+        }
+
+        /*.controls div:nth-child(2) {
+            transform: scalr(1.5);
+            background: #f53192;
+            color: #fff;
+        }*/
+        /*Fim da estilização dos controles do music-player*/
+    </style>
+</head>
+
+<body>
+    <!--Início Header-->
+    <div data-bs-spy="scroll" data-bs-target="#cabecalho">
+        <section id="inicio">
+        </section>
+        <header class="sticky-top">
+            <div class="navbar navbar-expand-lg">
+                <div class="container">
+                    <h1>
+                        <img src="./imagens/reidosoul.png" alt="">
+                    </h1>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <nav id="menu" class="collapse navbar-collapse justify-content-end">
+                        <ul class="nav navbar-nav nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#inicio">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#biografia">Biografia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#musicas">Músicas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contato">Fale conosco</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--Fim Header-->
+        
+        <div id="carouselExampleIndicators" class="carousel carousel-fade slide" data-bs-ride="carousel">
+            <!--início dos indicadores-->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <!--fim dos indicadores-->
+
+            <!--início dos slides carousel-->
+            <div class="carousel-inner">
+                <div  data-bs-interval="3000" class="carousel-item active">
+                    <img src="./imagens/tim-maia-racional.jpg" class="d-block w-100" alt="Ilustração Tim Maia Racional">
+                </div>
+                <div data-bs-interval="3000" class="carousel-item">
+                    <img src="./imagens/timvale.jpg" class="d-block w-100" alt="Ilustração Tim Maia 'vale tudo'">
+                </div>
+                <div data-bs-interval="3000" class="carousel-item">
+                    <img src="./imagens/timaia.jpg" class="d-block w-100" alt="Pintura do Tim Maia">
+                </div>
+            </div>
+            <!--fim dos slides carousel-->
+
+            <!--início botão para mudar slide-->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            <!--fim botão para mudar slide-->
+        </div>
+
+        <section id="biografia">
+            <h2>Biografia</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi assumenda repudiandae blanditiis quaerat voluptas magnam, enim in recusandae officiis eum sit culpa fuga labore sapiente dolore aliquam impedit cumque temporibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptates aperiam expedita, cum quaerat mollitia, dolor omnis velit perferendis a distinctio itaque deleniti blanditiis tempore. Explicabo laudantium sunt veniam nostrum.</p>
+        </section>
+
+        <!--início dos cards-->
+        <div id="musicas" class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./imagens/tim1.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="music-player">
+                            <h5 class="card-title">Essa Tal Felicidade</h5>
+                            <p>Albúm Romântico/1993</p>
+                            <audio id="song1">
+                                <source src="./media/essa-tal-felicidade.mp3" type="audio/mpeg">
+                            </audio>
+                            <input type="range" value="0" id="progress1">
+                            <div class="controls">
+                                <div onclick="playPause1()"><i class="fa-solid fa-play" id="ctrlIcon1"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">07/06/23 às 22:12</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./imagens/tim2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="music-player">
+                            <h5 class="card-title">Acenda o Farol</h5>
+                            <p>Albúm Tim Maia Disco Club/1978</p>
+                            <audio id="song2">
+                                <source src="./media/acendaOFarol.mp3" type="audio/mpeg">
+                            </audio>
+                            <input type="range" value="0" id="progress2">
+                            <div class="controls">
+                                <div onclick="playPause2()"><i class="fa-solid fa-play" id="ctrlIcon2"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">07/06/23 às 22:12</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./imagens/tim3.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="music-player">
+                            <h5 class="card-title">Coisas Tristes Pra Depois</h5>
+                            <p>Albúm Nuvens/1982</p>
+                            <audio id="song3">
+                                <source src="./media/coisasTristesPraDepois.mp3" type="audio/mpeg">
+                            </audio>
+                            <input type="range" value="0" id="progress3">
+                            <div class="controls">
+                                <div onclick="playPause3()"><i class="fa-solid fa-play" id="ctrlIcon3"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">07/06/23 às 22:12</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--fim dos cards-->
+    </div>
+
+    <script src="./lib/bootstrap.bundle.min.js"></script>
+    <script src="./main.js"></script>
+
+</body>
+</html>
